@@ -1,3 +1,4 @@
+import Banner from "@/components/marketing/Banner";
 import Hero from "@/components/marketing/Hero";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import PopularWorks from "@/components/marketing/PopularWorks";
@@ -10,7 +11,7 @@ export default function Home() {
       </div>
       <Hero />
       <PopularWorks />
-      <div className="h-[200vh]" />
+      <Banner />
     </main>
   );
 }

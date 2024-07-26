@@ -9,6 +9,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        backgroundOutline:
+          "bg-transparent border border-background text-background",
+        background: " bg-background hover:opacity-75 transition-all",
         default:
           " bg-primary text-background dark:text-foreground hover:bg-primary/90",
         ghost: " bg-secondary hover:bg-secondary/90 ",
