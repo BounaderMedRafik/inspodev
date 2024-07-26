@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <div className=" font-manrope">{children}</div>
+          <div>{children}</div>
         </ThemeProvider>
       </body>
     </html>

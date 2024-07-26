@@ -20,7 +20,9 @@ const config = {
     extend: {
       fontFamily: {
         hero: "Homemade Apple",
+        Mona: "Mona Sans",
       },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -70,10 +72,17 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        scroll:
+          "scroll var(--animation-duration, 200s) var(--animation-direction, forwards) linear infinite",
       },
     },
   },
