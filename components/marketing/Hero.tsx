@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { ArrowRight, LogIn } from "lucide-react";
 import { People } from "./People";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useUser } from "@clerk/nextjs";
 
 const people = [
   {

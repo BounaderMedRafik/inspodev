@@ -1,9 +1,18 @@
+"use client";
 import React from "react";
 import { Button } from "../ui/button";
 import { ArrowRight, ArrowUpRight, Heart, User2 } from "lucide-react";
 import Link from "next/link";
+import { useUser } from "@clerk/nextjs";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 const PopularWorks = () => {
+  const user = useUser();
   return (
     <div className="wrapper mt-10">
       <div>
@@ -26,9 +35,27 @@ const PopularWorks = () => {
                 </div>
               </div>
             </Button>
-            <Button variant={"outline"} size={"icon"}>
-              <User2 size={15} />
-            </Button>
+            {user.isSignedIn ? (
+              <TooltipProvider delayDuration={10}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link href={"/"}>
+                      <div className=" rounded-full overflow-hidden border-foreground/50 border hover:opacity-75">
+                        <img className="h-9" src={user.user.imageUrl} />
+                      </div>
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <div className="flex items-center gap-2">
+                      <div>check your saves</div>
+                      <div>
+                        <ArrowUpRight size={15} />
+                      </div>
+                    </div>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            ) : null}
           </div>
         </div>
       </div>
