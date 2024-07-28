@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import { ArrowRight, ArrowUpRight, Heart, User2 } from "lucide-react";
 import Link from "next/link";
 import { useUser } from "@clerk/nextjs";
@@ -27,14 +27,19 @@ const PopularWorks = () => {
             </div>
           </div>
           <div className=" flex items-center gap-2">
-            <Button variant={"outline"}>
+            <Link
+              href={"/feed"}
+              className={buttonVariants({
+                variant: "outline",
+              })}
+            >
               <div className=" flex items-center gap-2">
                 <div>Explore More</div>
                 <div>
                   <ArrowUpRight size={15} />
                 </div>
               </div>
-            </Button>
+            </Link>
             {user.isSignedIn ? (
               <TooltipProvider delayDuration={10}>
                 <Tooltip>

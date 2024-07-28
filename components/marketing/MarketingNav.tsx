@@ -22,7 +22,7 @@ const MarketingNav = () => {
                 className={buttonVariants({
                   variant: "default",
                 })}
-                href={"/"}
+                href={"/feed"}
               >
                 <div className="flex items-center gap-2">
                   <div>Explore Now</div>
