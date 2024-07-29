@@ -45,7 +45,7 @@ const MarketingNav = () => {
             )}
 
             <div>
-              <ModeToggle />
+              <ModeToggle size="icon" />
             </div>
           </div>
         </div>

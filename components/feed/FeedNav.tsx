@@ -7,6 +7,7 @@ import { Button, buttonVariants } from "../ui/button";
 import { Input } from "../ui/input";
 import MyLogo from "../ui/MyLogo";
 import TooltipReuseable from "../ui/TooltipReuseable";
+import { ModeToggle } from "../ui/ModeToggle";
 
 const FeedNav = () => {
   const pathname = usePathname();
@@ -39,6 +40,9 @@ const FeedNav = () => {
             >
               <User2 size={12} />
             </Link>
+            <div>
+              <ModeToggle size="smIcon" />
+            </div>
             <UserButton>crazy</UserButton>
           </div>
         </div>
@@ -68,7 +72,7 @@ const Search = () => {
       <div className=" wrapper py-3 text-3xl flex items-center justify-between">
         <Input placeholder="INSPODEV/ SEARCH" />
         <div className="-mt-2 flex items-center gap-0.5">
-          <TooltipReuseable text="Tags">
+          <TooltipReuseable side="bottom" text="Tags">
             <Link
               className={buttonVariants({
                 variant: "outline",
@@ -79,7 +83,7 @@ const Search = () => {
               <Hash size={12} />
             </Link>
           </TooltipReuseable>
-          <TooltipReuseable text="Populaire">
+          <TooltipReuseable side="bottom" text="Populaire">
             <Link
               className={buttonVariants({
                 variant: "outline",

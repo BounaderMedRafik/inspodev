@@ -7,9 +7,11 @@ import {
 } from "./tooltip";
 
 const TooltipReuseable = ({
+  side,
   text,
   children,
 }: {
+  side: "bottom" | "top" | "right" | "left";
   text: string;
   children: React.ReactNode;
 }) => {
@@ -17,7 +19,7 @@ const TooltipReuseable = ({
     <TooltipProvider delayDuration={10}>
       <Tooltip>
         <TooltipTrigger asChild>{children}</TooltipTrigger>
-        <TooltipContent side="bottom">{text}</TooltipContent>
+        <TooltipContent side={side}>{text}</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
