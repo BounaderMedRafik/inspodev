@@ -8,6 +8,8 @@ import { Input } from "../ui/input";
 import MyLogo from "../ui/MyLogo";
 import TooltipReuseable from "../ui/TooltipReuseable";
 import { ModeToggle } from "../ui/ModeToggle";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import PostingContent from "./PostingContent";
 
 const FeedNav = () => {
   const pathname = usePathname();
@@ -59,9 +61,16 @@ const FeedNav = () => {
 const AddingAPost = () => {
   return (
     <div>
-      <Button size={"smIcon"} variant={"outline"}>
-        <Plus size={12} />
-      </Button>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button size={"smIcon"} variant={"outline"}>
+            <Plus size={12} />
+          </Button>
+        </DialogTrigger>
+        <DialogContent>
+          <PostingContent />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
